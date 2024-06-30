@@ -11,7 +11,7 @@ const App = () => {
         <div className="bg-white p-8 m-8 rounded-md">
           <h1 className="text-4xl text-center">Molestador de Mora</h1>
           <div id="imgShow" className="mt-4 hidden">
-            <img className="rounded-md" src="src/assets/images/laugh-point.gif" alt="ola" />
+            <img className="rounded-md" src="https://th.bing.com/th/id/OIP.EiQDDaQrsKyY6s7EWewGpwAAAA?rs=1&pid=ImgDetMain" alt="ola" />
           </div>
           <h2 id="congrat" className="text-2xl text-center my-10">
             Pulse el botón para molestar a Mora
