@@ -1,9 +1,19 @@
+
+import song from './assets/audio/burlarseMora.mp3'
+
 const App = () => {
-  
+  const mocking = new Audio(song)
   const songButton = () =>{
     document.getElementById("congrat").innerHTML = "Te has burlado de Mora exitosamente!"
     document.getElementById("imgShow").className = " mt-4 "
+    mocking.play()
+
   }
+   
+    
+    
+    
+  
 
   return (
     <>
