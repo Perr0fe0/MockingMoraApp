@@ -2,8 +2,13 @@ import { useState } from "react";
 import song from "./assets/audio/burlarseMora.mp3";
 
 const App = () => {
+  /*Variable para guardar el audio de la risa  */
   const mocking = new Audio(song);
+  
+  /* Variable para iniciar contador en 1 */
   const [contador, setContador] = useState(1);
+
+  /* Variable array que contiene los links de las imagenes a usar */
   const listaImagenes = [
     "https://i.pinimg.com/originals/06/14/f0/0614f0c1b8ddfd2ba063eee38e31599d.jpg",
     "https://th.bing.com/th/id/OIP.EiQDDaQrsKyY6s7EWewGpwAAAA?rs=1&pid=ImgDetMain",
@@ -28,15 +33,21 @@ const App = () => {
     "https://i.pinimg.com/736x/b1/71/95/b17195292ca4b502f11119c2d9ab0b29.jpg",
     "https://i.pinimg.com/564x/41/4b/ba/414bba07f32fddab6465a44756815630.jpg",
     "https://i.pinimg.com/564x/d2/d7/06/d2d70673c97301537483050f417bb0ff.jpg",
-    
+
     
   ]
+
+  /* Variable para aleatorizar las imagenes */
   const [randomImage, setRandomImage] = useState(listaImagenes[0]);
 
-  const songButton = () => {
-    setContador(contador + 1);
-    const randomIndex = Math.floor(Math.random() * listaImagenes.length)
-    setRandomImage(listaImagenes[randomIndex])
+  /* Funcion para hacer la burla */
+  const mockingButton = () => {
+
+    setContador(contador + 1); /* <--- Sumar contador a si mismo + 1 */
+    const randomIndex = Math.floor(Math.random() * listaImagenes.length) /* <--- Crear un indice mediante el array de la lista de las imagenes */
+    setRandomImage(listaImagenes[randomIndex]) /*<--- Mostar imagen segun el numero del indice generado aleatoriamente */
+
+    /* Condicional para verificar si se ha burlado una o mas veces */
     if (contador === 1) {
       document.getElementById("congrat").innerHTML =
         "Te has burlado de Mora " + contador + " vez!";
@@ -48,6 +59,7 @@ const App = () => {
     document.getElementById("imgShow").className = " rounded-md ";
     mocking.play();
   };
+
   return (
     <>
       <main className="md:flex md:flex-col md:items-center">
@@ -68,7 +80,7 @@ const App = () => {
           </h2>
           <button
             id="boton"
-            onClick={songButton}
+            onClick={mockingButton}
             className="border-2 w-[100%] border-black rounded-lg p-4 hover:bg-sky-500 hover:text-white font-black text-2xl transition-all"
           >
             Molestar
